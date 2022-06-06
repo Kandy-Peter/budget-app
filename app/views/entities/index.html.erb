@@ -1,1 +1,27 @@
-<p>Inssf</p>
+<div>
+  <div class="home-nav">
+    <h2><%= @group.name.capitalize %> Transactions</h2>
+    <%= link_to  destroy_user_session_path, method: :delete, class: "btn" do%>
+      <i class="fa-solid fa-user-slash"></i>
+    <%end%>
+  </div>
+  <div class="transactions clm-row">
+      <% if @entities.empty? %>
+        <p class="empty-clm">There's no transaction yet. <%= link_to "Click here", new_group_entity_path %> to create one.</p>
+      <%else%>
+        <% @entities.each do |entity| %>
+          <div class="card clm-flex-row">
+            <img src=<%=entity.icon%> alt="entity_icon" class="icon">
+            <div class="entity_descript">
+              <div class="entitye-name clm-flex-row">
+                <h3><%= entity.name %></h3>
+                <p>$<%= entity.amount %></p>
+              </div>
+              <span class="card-date"><%= entity.created_at.to_date %></span> 
+            </div>
+          </div>
+        <%end%>
+      <%end%>
+  </div>
+  <%= link_to "Create Entity", new_group_entity_path, class: "btn-link btn-primary el-center active submit" %>
+</div>

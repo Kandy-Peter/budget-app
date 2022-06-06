@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   
   root to: "groups#index"
   resources :groups, only: [:index,:new, :create] do
-    resources :entities, only: [:index]
+    resources :entities, only: [:index, :new, :create]
   end
 end

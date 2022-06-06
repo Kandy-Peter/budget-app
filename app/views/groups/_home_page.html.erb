@@ -14,7 +14,9 @@
             <img src=<%=group.icon%> alt="group_icon" class="icon">
             <div class="group_descript">
               <div class="groupe-name clm-flex-row">
-                <h3><%= group.name %></h3>
+                <%= link_to group_entities_path(group.id) do%>
+                  <h3><%= group.name %></h3>
+                <%end%>
                 <p>$0</p>
               </div>
               <span class="card-date"><%= group.created_at.to_date %></span> 
