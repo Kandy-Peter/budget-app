@@ -1,0 +1,27 @@
+<div>
+  <div class="home-nav">
+    <h2>Transactions</h2>
+    <%= link_to  destroy_user_session_path, method: :delete, class: "btn" do%>
+      <i class="fa-solid fa-user-slash"></i>
+    <%end%>
+  </div>
+  <div class="transactions clm-row">
+      <% if @groups.empty? %>
+        <p class="empty-clm">There's no group transaction yet. <%= link_to "Click here", new_group_path %> to create one.</p>
+      <%else%>
+        <% @groups.each do |group| %>
+          <div class="card clm-flex-row">
+            <img src=<%=group.icon%> alt="group_icon" class="icon">
+            <div class="group_descript">
+              <div class="groupe-name clm-flex-row">
+                <h3><%= group.name %></h3>
+                <p>$0</p>
+              </div>
+              <span class="card-date"><%= group.created_at.to_date %></span> 
+            </div>
+          </div>
+        <%end%>
+      <%end%>
+  </div>
+  <%= link_to "Create Group", new_group_path, class: "btn-link btn-primary el-center active submit" %>
+</div>

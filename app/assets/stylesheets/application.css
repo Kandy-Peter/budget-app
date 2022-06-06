@@ -8,6 +8,7 @@
 
 body {
   background-color: #f1f1f1;
+  font-family: 'Montserrat', sans-serif;
 }
 
 a {
@@ -17,7 +18,6 @@ a {
 .container {
   height: 100vh;
   padding: 1rem;
-  font-family: 'Montserrat', sans-serif;
   color: #434b54;
 }
 
@@ -94,4 +94,74 @@ a {
 
 .shared-links a {
   color: rgb(95, 95, 95);
+}
+
+/* -----------------tansaction path------------------ */
+
+.home-nav {
+  background-color: #3778c2;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 10px 15px;
+}
+
+.btn {
+  color: #fff;
+}
+
+.transactions {
+  padding: 15px;
+}
+
+.card {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 1px 2px 2px #d4d4d4;
+  margin: 10px 0;
+  border-radius: 5px;
+  height: 100px;
+}
+
+.clm-flex-row {
+  display: flex;
+  align-items: center;
+}
+
+.btn-primary {
+  background-color: #5fb523;
+  color: #fff;
+}
+
+.icon {
+  width: 95px;
+  height: 95px;
+  margin: 5px;
+}
+
+.groupe-name {
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 7px;
+  font-size: 12px;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid #7e7e7e;
+}
+
+.group_descript {
+  width: 65%;
+  color: #7e7e7e;
+}
+
+.groupe-name p {
+  font-weight: 700;
+  color: #434b54;
+}
+
+.card-date {
+  width: 100%;
+  margin-left: 8px;
+  font-size: 10px;
 }
