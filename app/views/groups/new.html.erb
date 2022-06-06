@@ -1,0 +1,15 @@
+<div class="form-clm">
+  <%= form_with model: @group do |f| %>
+    <div class="field">
+      <%= f.text_field :name, placeholder: 'Enter your name', class: "input_form border" %>
+    </div>
+
+    <div class="field">
+      <%= f.text_field :text, placeholder: 'Icon link', class: "input_form border" %><br>
+    </div>
+
+    <div  class= "input_btn border btn">
+      <%= f.submit "Submit", class: "btn-link el-center active submit" %>
+    </div>
+  <% end %>
+</div>

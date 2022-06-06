@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="home-nav">
+    <h2>Transactions</h2>
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "bnt" %>
+  </div>
+  <div class="transactions">
+      <% if @groups.empty? %>
+        <p class="empty-clm">There's no group transaction yet. <%= link_to "Click here", new_group_path %> to create one.</p>
+      <%else%>
+        <% @groups.each do |group| %>
+          <%= link_to group_entity_path(entity.id) %>
+            <img src=<%=group.icon%> alt="group_icon">
+            <div class="group_descript">
+              <h3><%= group.name %></h3>
+              <p>$0</p>
+              <span><%= group.created_at.to_date %></span> 
+            </div>
+          <%end %>
+        <%end%>
+      <%end%>
+  </div>
+  <%= link_to "Create Group", new_group_path, class: "btn-link el-center active submit" %>
+</div>
