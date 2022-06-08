@@ -4,6 +4,7 @@ class GroupsController < ApplicationController
 
   def index
     @groups = current_user.groups.all.order(created_at: :desc)
+    @entities = current_user.entities.all
   end
 
   def show; end

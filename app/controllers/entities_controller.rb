@@ -3,8 +3,8 @@ class EntitiesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @entities = current_user.entities.all.order(created_at: :desc)
     @group = Group.find_by(id: params[:group_id])
+    @entities = current_user.entities.all.order(created_at: :desc)
   end
 
   def new
@@ -13,10 +13,11 @@ class EntitiesController < ApplicationController
 
   def create
     @entity = Entity.new(entity_params)
+    @entity.user_id = current_user.id
 
     if @entity.save
       flash[:success] = 'Transaction created successfully'
-      render :show, notice: "Succefully added!"
+      redirect_to group_entities_path, notice: "Succefully added!"
     else
       flash.now[:error] = 'Entity not saved, try again'
       render :new, status: :unprocessable_entity
@@ -26,6 +27,6 @@ class EntitiesController < ApplicationController
   private
 
   def entity_params
-    params.require(:entity).permit(:name, :amount, :group_id)
+    params.permit(:name, :amount)
   end
 end
