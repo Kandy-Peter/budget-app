@@ -20,8 +20,5 @@
     <div  class= "input_btn border btn">
       <%= f.submit "Add Transaction", class: "btn-link el-center active submit" %>
     </div>
-    <%= fields_for(@group) do |cat| %>
-            <%= cat.select :group_id, Group.all.map { |item| [item.name, item.id] }, {}, {class: 'form-select form-select-lg mb-3'} %>
-        <% end %>
   <% end %>
 </div>

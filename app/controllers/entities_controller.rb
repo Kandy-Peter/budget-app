@@ -4,7 +4,7 @@ class EntitiesController < ApplicationController
 
   def index
     @group = Group.find_by(id: params[:group_id])
-    @entities = current_user.entities.all.order(created_at: :desc)
+    @entities = Entity.where(group_id: @group.id)
   end
 
   def new
@@ -27,6 +27,6 @@ class EntitiesController < ApplicationController
   private
 
   def entity_params
-    params.permit(:name, :amount)
+    params.permit(:name, :amount, :group_id)
   end
 end

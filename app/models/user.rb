@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :groups, class_name: 'Group', foreign_key: :user_id, dependent: :destroy
   has_many :entities, class_name: 'Entity', foreign_key: :user_id, dependent: :destroy
 
-  validates :name, :email, :password, presence: true
+  validates :email, :password, presence: true
 end
