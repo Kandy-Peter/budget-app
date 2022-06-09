@@ -4,9 +4,11 @@ class GroupsController < ApplicationController
 
   def index
     @groups = current_user.groups.all.order(created_at: :desc)
+    @entities = current_user.entities.all
   end
 
   def show; end
+
   def new
     @group = Group.new
   end
@@ -17,10 +19,9 @@ class GroupsController < ApplicationController
 
     if @group.save
       flash[:success] = 'Transaction created successfully'
-      # render :show, status: :created, location: @group
-      redirect_to groups_path, notice: "Succefully added!"
+      redirect_to groups_path, notice: 'Succefully added!'
     else
-      flash.now[:error] = 'Post not saved, try again'
+      flash.now[:error] = 'Group not saved, try again'
       render :new, status: :unprocessable_entity
     end
   end

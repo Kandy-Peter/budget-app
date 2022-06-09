@@ -1,0 +1,27 @@
+<div class="home-nav">
+  <%= link_to  groups_path, class: "btn" do%>
+    <i class="fa-solid fa-chevron-left"></i>
+  <%end%>
+  <h2>New Entity</h2>
+  <%= link_to  destroy_user_session_path, method: :delete, class: "btn" do%>
+    <i class="fa-solid fa-user-slash"></i>
+  <%end%>
+</div>
+<div class="form-clm">
+  <%= form_with model: @group_entity, url: group_entities_path do |f| %>
+    <div class="field">
+      <%= f.text_field :name, placeholder: 'Transaction name', class: "input_form border" %>
+    </div>
+
+    <div class="field">
+      <%= f.number_field :amount, placeholder: 'Amount', class: "input_form border" %><br>
+    </div>
+
+    <div  class= "input_btn border btn">
+      <%= f.submit "Add Transaction", class: "btn-link el-center active submit" %>
+    </div>
+    <%= fields_for(@group) do |cat| %>
+            <%= cat.select :group_id, Group.all.map { |item| [item.name, item.id] }, {}, {class: 'form-select form-select-lg mb-3'} %>
+        <% end %>
+  <% end %>
+</div>
