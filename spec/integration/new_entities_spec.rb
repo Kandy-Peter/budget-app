@@ -26,7 +26,7 @@ RSpec.describe 'Entity#index', type: :system do
 
     click_button 'Add Transaction'
 
-    expect(page).to have_current_path(group_entities_path(@entity))
-    expect(page).to have_content('Transaction created successfully')
+    expect(page).to have_current_path(group_entities_path(@group))
+    expect(page).to have_content('Succefully added!')
   end
 end
