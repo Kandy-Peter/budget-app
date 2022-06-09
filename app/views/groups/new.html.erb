@@ -1,0 +1,24 @@
+<div class="home-nav">
+  <%= link_to  groups_path, class: "btn" do%>
+    <i class="fa-solid fa-chevron-left"></i>
+  <%end%>
+  <h2>New Transaction</h2>
+  <%= link_to  destroy_user_session_path, method: :delete, class: "btn" do%>
+    <i class="fa-solid fa-user-slash"></i>
+  <%end%>
+</div>
+<div class="form-clm">
+  <%= form_with model: @group do |f| %>
+    <div class="field">
+      <%= f.text_field :name, placeholder: 'Enter your name', class: "input_form border" %>
+    </div>
+
+    <div class="field">
+      <%= f.text_field :icon, placeholder: 'Icon link', class: "input_form border" %><br>
+    </div>
+
+    <div  class= "input_btn border btn">
+      <%= f.submit "Submit", class: "btn-link el-center active submit" %>
+    </div>
+  <% end %>
+</div>
