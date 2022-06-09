@@ -13,7 +13,7 @@ a mobile web application where you can manage your budget: you have a list of tr
 ## links
 
 - Demo link: [budget-app]()
-- Loom presentation: [Budget app]()
+- Loom presentation: [Budget app](https://www.loom.com/share/8211974b4cac4fe7bfcc93da6927af62)
 
 ## Built With
 
