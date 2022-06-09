@@ -8,6 +8,7 @@ class GroupsController < ApplicationController
   end
 
   def show; end
+
   def new
     @group = Group.new
   end
@@ -18,7 +19,7 @@ class GroupsController < ApplicationController
 
     if @group.save
       flash[:success] = 'Transaction created successfully'
-      redirect_to groups_path, notice: "Succefully added!"
+      redirect_to groups_path, notice: 'Succefully added!'
     else
       flash.now[:error] = 'Group not saved, try again'
       render :new, status: :unprocessable_entity

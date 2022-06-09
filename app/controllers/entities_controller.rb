@@ -17,7 +17,7 @@ class EntitiesController < ApplicationController
 
     if @entity.save
       flash[:success] = 'Transaction created successfully'
-      redirect_to group_entities_path, notice: "Succefully added!"
+      redirect_to group_entities_path, notice: 'Succefully added!'
     else
       flash.now[:error] = 'Entity not saved, try again'
       render :new, status: :unprocessable_entity

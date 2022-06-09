@@ -180,9 +180,9 @@ img {
   padding: 12px;
 }
 
-.details{
+.details {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   width: 100%;
   margin-bottom: 20px;
 }
