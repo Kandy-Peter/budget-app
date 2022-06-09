@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :entity do
-    name { 'Mac Book' }
+    name { 'Apple' }
     amount { 500 }
     user { nil }
   end
