@@ -11,7 +11,7 @@ RSpec.describe 'Entity#index', type: :system do
   end
 
   it 'Check the page title' do
-    expect(page).to have_content("New Entity")
+    expect(page).to have_content('New Entity')
   end
 
   it 'Check inputs fields' do
